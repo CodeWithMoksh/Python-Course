@@ -66,3 +66,10 @@ appending.close()
 
 with open("9_File_io_example.txt", "w") as file:
     file.write("Hello This a sample file")
+
+# Some important things to keep in mind:
+# The + symbol in a file mode means that the file is opened for updating, which allows both reading and writing.
+# It is used in combination with r, w, or a:
+# 'r+' → Open for reading and writing, but the file must exist.
+# 'w+' → Open for reading and writing, but the file is truncated (cleared) if it exists or created if it doesn’t.
+# 'a+' → Open for reading and appending, but does not truncate. The file is created if it doesn’t exist.
