@@ -242,3 +242,98 @@
 #   for i in range(1,11):
 #     print(f"{n} X {i} = ",n*i)
 # multiply(3)
+
+# class Programmer:
+#     company = "Microsoft"
+#     def __init__(self, name, age, profession):
+#         self.name = name
+#         self.age = age
+#         self.profession = profession
+
+# person1 = Programmer("Moksh", 18, "Web Developer")
+# import math
+
+# class Calculator:
+#   @staticmethod
+#   def greet():
+#       print("Hello User you are welcomed here by Moksh")
+
+#   def sqaure(self, num):
+#       print(f"The Square of {num} is :- {num*num}")
+  
+#   def cube(self, num):
+#       print(f"The Cube of {num} is :- {num*num*num}")
+  
+#   def root(self, num):
+#        print(f"The Square Root of {num} is :- {math.sqrt(num)}")
+  
+# num1 = Calculator()
+# num1.root()
+
+
+# from random import randint
+
+# class Train:
+#     def __init__(self, trainNo, fro, to):
+#         self.trainNo = trainNo
+#         self.fro = fro
+#         self.to = to
+
+#     def book(self):
+#         print(f"Hello User, Your train {self.trainNo} has been booked from {self.fro} to {self.to}")
+    
+#     def get_status(self):
+#         print(f"Your train {self.trainNo} is running on time")
+
+#     def get_fare(self):
+#         print(f"Your train {self.trainNo} from {self.fro} to {self.to} has been confirmed and your seat number is {randint(100, 200)} ")
+
+# tr = Train(82758247509, "Ajmer", "Vadodara")
+# tr.book()
+# tr.get_fare()
+# tr.get_status()
+
+
+# class Student:
+#     def __init__(slf, name):
+#         slf.name = name
+
+# stu = Student("Moksh")
+# print(stu.name)
+
+# class Animal:
+#     def __init__(self, type):
+#         self.type = type
+#         print("Animal + ")
+
+# class Pet(Animal):
+#     def __init__(self, type, breed):
+#         super().__init__(type)
+#         self.breed = breed
+#         print("Pet + ")
+
+# class Dog(Pet):
+#     def __init__(self, type, breed):
+#         super().__init__(type, breed)
+#         print("Dog + ")
+
+# do = Dog("Domestic", "Jerman")
+
+# class Employee:
+#     def __init__(self, name, age, profession, salary):
+#         self.name = name
+#         self.age = age
+#         self.profession = profession
+#         self.salary = salary
+    
+#     def add_salary(self, increment):
+#         self.salary += increment
+#         print(f"{increment} ruppes Incremented in your Salary. Your new salary is {self.salary}")
+    
+#     @property
+#     def get_salary(self):
+#         return self.salary
+    
+# emp = Employee("Moksh", 18, "Web Developer", 10)
+# emp.add_salary(50)
+# print(emp.get_salary)
