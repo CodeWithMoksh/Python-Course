@@ -240,7 +240,7 @@ else:
 
 class BankLocker:
     def __init__(self, lock_number):
-        self.__locker_number = lock_number #Private attribute so it can be accessed and changed by other users
+        self.__locker_number = lock_number #Private attribute so it cannot be accessed and changed by other users
 
     def get_number(self): # Getter Method
         return self.__locker_number

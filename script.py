@@ -108,7 +108,7 @@ print("Here is your sum of the no.:", name1+passwo) #I knew it will only be cont
 
 
 # CHAPTER 3 STRINGS
-# String is a datatype in python it is used to store the characters and even sometimes even the numbers in string form
+# String is a datatype in python it is used to store the characters and even sometimes the numbers in string form
 # When we say strings are immutable in Python, it means that once a string is created, its content cannot be changed. You cannot change them by running functions on them.
 # If anything written in Single cots(''), Double Cots("") or Triple Cots(''' ''') can be considered as a string.
 # Single and double quotes are used for single-line strings, while triple quotes are used for multi-line strings and docstrings. Triple quotes can also include both single and double quotes without escaping them.
@@ -124,7 +124,7 @@ My dear
 print(len(a)) 
 
 # String Slicing
-# It allows you to extract a portion of a string by specifying a start and end index. It follows the format string[start:end].
+# It allows you to extract a portion of a string by specifying a start and end index. It follows the format:- string[start:end].
 # Suppose we have a string "Moksh" its character starting would be from index 0. So in this if we count from zero there will be 4 charcaters
 # If we want to start the counting from the ending we will start from -1 .Like -1,-2....
 # For more you can go through this https://i.ytimg.com/vi/BhmsJAzIp6w/maxresdefault.jpg
@@ -171,7 +171,7 @@ print(" ".join(j))
 s = "Hello World"
 print(s.replace("World", "Python"))
 
-# 10)Find(): It finds the index value in the given string what we have to find as we can find the index values of some strings,characters or even double or signle spaces
+# 10)Find(): It finds the index value in the given string what we have to find as we can find the index values of some strings,characters or even double or single spaces
 space = "Hellloo I  am on the  moon"
 print(space.find("  "))
 
@@ -206,7 +206,7 @@ print("Hello\rWorld!")  # Output: World!
 
 # CHAPTER 4 LISTS AND TUPLES
 # Python lists are containers to store a set of values of any data type.
-# As we know that we cannot change any extisting strings bcz they are imutable. 
+# As we know that we cannot change any extisting strings bcz they are immutable. 
 # If we use arrays and lists we can change the data in it as they are mutable
 
 fruit = ["Apple", "Orange", "Banana", "Grapes", "Kiwi"]#This is a type of list of strings we can even store boolean, integers or floating datatypes
@@ -217,7 +217,7 @@ print(fruit[1])
 
 # List Methods
 
-exa = ["Moksh", "Suyash", "rythm", "Nitin", "Sanvi", "Aakash", "Rohan"]
+exa = ["Moksh", "Suyash", "rhythm", "Nitin", "Sanvi", "Aakash", "Rohan"]
 num = [1,2,6,2,9,2,5,1,0]
 # 1)Append(): Adds an element to the end of the list.This modifies the list in place and does not return anything.
 exa.append("Swara") #It takes only one argument if we want to add many items we can use extend()
@@ -436,7 +436,7 @@ else:
 
 print("Here the program ends")#Here the if-elif-else ladder ends
 
-# Now here's a catch somes. As we know we can use if statements too instead of elif. But kindly never do this the reasons are:-
+# Now here's a catch. As we know we can use if statements too instead of elif. But kindly never do this the reasons are:-
 # If you use multiple if statements instead of elif, the program will check all conditions independently, even if an earlier condition is already True.
 marks = 35
 
@@ -498,7 +498,8 @@ for i in range(1,6):
 # WHILE LOOPS:-
 # In while loops, the condition is checked first. If it evaluates to true, the body of the loop is executed otherwise not!
 # It is useful when the number of iterations is not known beforehand and depends on some condition.
-# The syntax of while loop is
+
+# The syntax of while loop is:-
 # while condition:
      # Code block to execute
 
@@ -734,7 +735,7 @@ print(factorial(5))
 # The open() function can create a new file if it does not already exist, but it depends on the mode you use.
 
 open2 = open("9_File_io_example.txt", "r") #In this we are opening a file containing some text. The task to be performed is written in the mode option. By default it's r(read)
-read = open2.read() #Reading the context of the open file and storing it on the variable
+read = open2.read() #Reading the context of the open file and storing it in the variable
 open2.close() #After opening a file we should close it to don't get any problems in the code
 print(read)
 
@@ -999,7 +1000,7 @@ car1.get_details()
 
 # Property Decorator
 # The @property decorator in Python allows a method to be accessed like an attribute.
-#  It converts a method into a property, meaning you can call it without parentheses ().
+# It converts a method into a property, meaning you can call it without parentheses ().
 class Marks:
     def __init__(self, phy, chem, math):
         self.phy = phy
@@ -1035,7 +1036,7 @@ else:
 
 class BankLocker:
     def __init__(self, lock_number):
-        self.__locker_number = lock_number #Private attribute so it can be accessed and changed by other users
+        self.__locker_number = lock_number #Private attribute so it cannot be accessed and changed by other users
 
     def get_number(self): # Getter Method
         return self.__locker_number
@@ -1349,3 +1350,99 @@ print(numbers)
 # Squaring of the numbers:-
 numList = [1,6,3,9,10,2]
 sqaure = [i*i for i in numList] # 'i' is the value taken from the numList and then multiplied with itself and appended to the list.
+
+
+# Lambda keyword
+# A lambda function is a small, one-line function that does not have a name. It is used when you need a quick function for simple calculations. Instead of using def to define a function, you use the lambda keyword.
+
+# Syntax:-
+# lambda arguments: expression
+
+# lambda → A special keyword to create a small function.
+# arguments → Parameters
+# expression → The operation to be performed (must be a single line).
+
+sqaure = lambda a: a*a  # 'a' is given as the parameter and the expression as a*a which is used for getting the sqaure of the number
+print(sqaure(5))
+
+# Passing more than 1 parameter:-
+total = lambda a,b,c,d: a+b+c+d  #The expression we are performing it directly return its value
+print(total(100,200,300,400))
+
+
+# Format Method
+# The format() method in Python is used to insert values into a string. It helps you create dynamic sentences without manually joining strings.
+
+# Syntax:-
+# "Some text {} and {}".format(value1, value2)
+
+# {} → A placeholder where the value will be inserted.
+# .format(value1, value2, ...) → Values to be placed in {}.
+
+val = "Some text is {} here which is {} jain is a {} boy.".format("entered", "Moksh", "good")
+print(val)
+
+# This format method is used in previous versions of python but still used in many websites which are still using that version.
+# Now this method is replaced by 'f' string as we are using in our overall course.
+
+# We can even change the sequence of getting the values in parantheses by entering the index of the listed values. 
+val = "Some text is {1} here which is {0} jain is a {2} boy.".format("entered", "Moksh", "good")
+print(val)
+
+
+# Map:-
+# Apply a Function to Each Item. Takes a function and a list (or other iterable). Applies the function to each item in the list. Returns a new list with the modified values.
+numbers = [1,2,3,4,5,6,7,8,9,10]
+cube = list(map(lambda x: x**3, numbers)) # The 'x' given as a parameter takes the values from the numbers one by one and map function appends that number into the list. To get that numbers we have to convert this map into a list to access it.
+print(cube)
+
+# map() is a function that iterates over the list numbers.
+# It takes each element from numbers and passes it to the lambda function.
+# The lambda function receives each element as x and processes it.
+
+def make_even(num):
+    if num%2 != 0:
+        return num+1
+    else:
+        return num
+sqaure = list(map(make_even, numbers))
+
+# How map() is working in this code
+# Takes 1 → Calls make_even(1) → Returns 2
+# Takes 2 → Calls make_even(2) → Returns 2
+# Takes 3 → Calls make_even(3) → Returns 4
+
+# Normally, map(function, iterable1, iterable2, ...) can take multiple iterables.
+# If a function has more than one parameter, map() will take elements from multiple lists at the same time, passing one value from each list to the function.
+
+
+# Filter:-
+# The filter() method is used to select certain items from a list based on a condition.
+
+# Syntax:-
+# filter(function, iterable)
+
+# function → A function that returns True or False.
+# iterable → A list (or other collection) to filter.
+# Only the items where function returns True are kept!
+
+animals = ["Lion", "Elephant", "Giraffe", "Rhino", "Deer","Charvik", "Donkey"]
+even_number = list(filter(lambda x: len(x) > 5, animals)) #This filters the list of animals on a condition which return true or false
+print(even_number)
+
+
+# Reduce:-
+# The reduce() function is used to combine all elements of a list into a single value.
+
+# Syntax:-
+# from functools import reduce
+# reduce(function, iterable)
+
+# function → A function that takes two values at a time and combines them.
+# iterable → A list (or other collection) to process.
+# Keeps reducing until only one final result remains.
+
+from functools import reduce
+numbers = [1, 2, 3, 4]
+total_sum = reduce(lambda x, y: x + y, numbers)
+print(total_sum)

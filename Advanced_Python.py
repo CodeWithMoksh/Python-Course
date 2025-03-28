@@ -285,3 +285,99 @@ print(numbers)
 # Squaring of the numbers:-
 numList = [1,6,3,9,10,2]
 sqaure = [i*i for i in numList] # 'i' is the value taken from the numList and then multiplied with itself and appended to the list.
+
+
+# Lambda keyword
+# A lambda function is a small, one-line function that does not have a name. It is used when you need a quick function for simple calculations. Instead of using def to define a function, you use the lambda keyword.
+
+# Syntax:-
+# lambda arguments: expression
+
+# lambda → A special keyword to create a small function.
+# arguments → Inputs (like normal function parameters).
+# expression → The operation to be performed (must be a single line).
+
+sqaure = lambda a: a*a  # 'a' is given as the parameter and the expression as a*a which is used for getting the sqaure of the number
+print(sqaure(5))
+
+# Passing more than 1 parameter:-
+total = lambda a,b,c,d: a+b+c+d  #The expression we are performing it directly return its value
+print(total(100,200,300,400))
+
+
+# Format Method
+# The format() method in Python is used to insert values into a string. It helps you create dynamic sentences without manually joining strings.
+
+# Syntax:-
+# "Some text {} and {}".format(value1, value2)
+
+# {} → A placeholder where the value will be inserted.
+# .format(value1, value2, ...) → Values to be placed in {}.
+
+val = "Some text is {} here which is {} jain is a {} boy.".format("entered", "Moksh", "good")
+print(val)
+
+# This format method is used in previous versions of python but still used in many websites which are still using that version.
+# Now this method is replaced by 'f' string as we are using in our overall course.
+
+# We can even change the sequence of getting the values in parantheses by entering the index of the listed values. 
+val = "Some text is {1} here which is {0} jain is a {2} boy.".format("entered", "Moksh", "good")
+print(val)
+
+
+# Map:-
+# Apply a Function to Each Item. Takes a function and a list (or other iterable). Applies the function to each item in the list. Returns a new list with the modified values.
+numbers = [1,2,3,4,5,6,7,8,9,10]
+cube = list(map(lambda x: x**3, numbers)) # The 'x' given as a parameter takes the values from the numbers one by one and map function appends that number into the list. To get that numbers we have to convert this map into a list to access it.
+print(cube)
+
+# map() is a function that iterates over the list numbers.
+# It takes each element from numbers and passes it to the lambda function.
+# The lambda function receives each element as x and processes it.
+
+def make_even(num):
+    if num%2 != 0:
+        return num+1
+    else:
+        return num
+sqaure = list(map(make_even, numbers))
+
+# How map() is working in this code
+# Takes 1 → Calls make_even(1) → Returns 2
+# Takes 2 → Calls make_even(2) → Returns 2
+# Takes 3 → Calls make_even(3) → Returns 4
+
+# Normally, map(function, iterable1, iterable2, ...) can take multiple iterables.
+# If a function has more than one parameter, map() will take elements from multiple lists at the same time, passing one value from each list to the function.
+
+
+# Filter:-
+# The filter() method is used to select certain items from a list based on a condition.
+
+# Syntax:-
+# filter(function, iterable)
+
+# function → A function that returns True or False.
+# iterable → A list (or other collection) to filter.
+# Only the items where function returns True are kept!
+
+animals = ["Lion", "Elephant", "Giraffe", "Rhino", "Deer","Charvik", "Donkey"]
+even_number = list(filter(lambda x: len(x) > 5, animals)) #This filters the list of animals on a condition which return true or false
+print(even_number)
+
+
+# Reduce:-
+# The reduce() function is used to combine all elements of a list into a single value.
+
+# Syntax:-
+# from functools import reduce
+# reduce(function, iterable)
+
+# function → A function that takes two values at a time and combines them.
+# iterable → A list (or other collection) to process.
+# Keeps reducing until only one final result remains.
+
+from functools import reduce
+numbers = [1, 2, 3, 4]
+total_sum = reduce(lambda x, y: x + y, numbers)
+print(total_sum)
