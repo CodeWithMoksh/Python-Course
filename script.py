@@ -581,7 +581,7 @@ else:
     print("Here the loop ends")
 
 # Break Statements
-# Break is used when we want to exit the loop right now
+# Break is used when we want to exit the loop right now. Python’s break always terminates the nearest enclosing loop (like while or for), not the if, else, or try.
 for i in range(50):
     if i==5:
         break# Exit the loop right now if i value becomes 5
