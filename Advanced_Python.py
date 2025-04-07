@@ -381,3 +381,35 @@ from functools import reduce
 numbers = [1, 2, 3, 4]
 total_sum = reduce(lambda x, y: x + y, numbers)
 print(total_sum)
+
+
+# API:-
+
+# What is an API?
+# 1)API stands for Application Programming Interface.
+# 2)You can think of it like a waiter in a restaurant.
+# 3)You (the customer) look at the menu and tell the waiter what you want.
+# 4)The waiter takes your order to the kitchen.
+# 5)The kitchen prepares your food and gives it to the waiter.
+# 6)The waiter brings it back to you.
+# 7)The API is like the waiter – it takes your request to a program or a server, gets the result, and gives it back to you.
+# 8)APIs are used to let different software talk to each other.
+
+# How to Use an API:-
+# 1)Find an API – For example, a Joke API, Weather API, Currency API, etc.
+# 2)Read the API documentation – It tells you:
+# i)What URLs to use
+# ii)What information to send (like city name)
+# iii)What it will give back
+# 3)Send a request using code
+# 4)Get a response (usually in JSON format)
+# 5)Use that data in your app or program
+
+import requests
+
+api_key = "5136d737d45d42b0b1764caa779e1a0a" #This is the API key provided by the dealer of the API. It is special for everyone
+url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey=5136d737d45d42b0b1764caa779e1a0a" #This is URL from which the API will be getting its resources
+response = requests.get(url) #We send a request to the API
+news_data = response.json() #Convert the response into Python format
+for article in news_data["articles"][:5]: #Printing the News
+    print("📰", article["title"])
