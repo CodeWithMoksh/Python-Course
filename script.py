@@ -180,11 +180,16 @@ print(space.find("  "))
 message = "Moksh Jain: Hello there!"
 parts = message.split(':')
 print(parts)
-
 # You can tell .split() to only split once: This is used when the seperator is coming in the string multiple times and we want only some parts to be seperated
 line = "Pari Didi: How are you doing?"
 name, msg = line.split(':', 1)
 print(name, msg)
+
+# 12)Any(): The any() function is a built-in Python function that checks if at least one value in an iterable (like a list, tuple, or generator) is True. It is better than loops as they check all the values even after getting True
+# It returns True immediately when it finds the first True.
+# Best Method to use with loops
+numbers = [0, 0, 4, 0]
+print(any(num > 0 for num in numbers))  # Output: True
 
 
 # Escape Sequence Character
