@@ -65,6 +65,17 @@ print(s.replace("World", "Python"))
 space = "Hellloo I  am on the  moon"
 print(space.find("  "))
 
+# 11)Split(): Cut the String into Pieces. This function is very important and used in many projects. This is being used to seperate the string into parts. The best ex. we can take is of a file name we want to extract by removing its extention.
+# .split(separator) cuts a string into parts, wherever it finds the separator.It returns a list of parts.By default, it splits on spaces if no separator is given.
+message = "Moksh Jain: Hello there!"
+parts = message.split(':')
+print(parts)
+
+# You can tell .split() to only split once: This is used when the seperator is coming in the string multiple times and we want only some parts to be seperated
+line = "Pari Didi: How are you doing?"
+name, msg = line.split(':', 1)
+print(name, msg)
+
 
 # Escape Sequence Character
 

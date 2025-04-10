@@ -384,7 +384,6 @@ print(total_sum)
 
 
 # API:-
-
 # What is an API?
 # 1)API stands for Application Programming Interface.
 # 2)You can think of it like a waiter in a restaurant.
@@ -413,3 +412,24 @@ response = requests.get(url) #We send a request to the API
 news_data = response.json() #Convert the response into Python format
 for article in news_data["articles"][:5]: #Printing the News
     print("📰", article["title"])
+
+
+# Importance of '_':
+# _ is just a variable name, like any other, but by convention, it means: “I don’t care about this value.”
+
+line = "Moksh jain: What are you doing these days?"
+_, rest = line.split(']', 1) #Here the string is converted into 2 parts. The first value is assigned to '_' and the second to 'rest'
+
+# The value in the _: It shows other programmers: “Hey, this part is not important.”
+# It avoids naming variables you don’t need.
+# We can still access the '_' later in code but its not a good practise.
+
+# Even though _ works like a normal variable, Python developers use it as a "throwaway" variable, which means:
+# "I don't care about this value."
+# "I'm not going to use it later."
+# So using it later can confuse people reading your code. They’ll assume _ was meant to be ignored.
+
+# When it is used:-
+# Sometimes people do this in small scripts or quick testing:
+for _ in range(3): #Here, _ means: “I don’t care about the counter number.”
+    print("Do this 3 times")

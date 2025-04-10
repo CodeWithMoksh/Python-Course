@@ -175,6 +175,18 @@ print(s.replace("World", "Python"))
 space = "Hellloo I  am on the  moon"
 print(space.find("  "))
 
+# 11)Split(): Cut the String into Pieces. This function is very important and used in many projects. This is being used to seperate the string into parts. The best ex. we can take is of a file name we want to extract by removing its extention.
+# .split(separator) cuts a string into parts, wherever it finds the separator.It returns a list of parts.By default, it splits on spaces if no separator is given.
+message = "Moksh Jain: Hello there!"
+parts = message.split(':')
+print(parts)
+
+# You can tell .split() to only split once: This is used when the seperator is coming in the string multiple times and we want only some parts to be seperated
+line = "Pari Didi: How are you doing?"
+name, msg = line.split(':', 1)
+print(name, msg)
+
+
 # Escape Sequence Character
 # 1. Backslash (\\)
 # Used to include a literal backslash in a string.
@@ -1446,3 +1458,55 @@ from functools import reduce
 numbers = [1, 2, 3, 4]
 total_sum = reduce(lambda x, y: x + y, numbers)
 print(total_sum)
+
+
+# API:-
+# What is an API?
+# 1)API stands for Application Programming Interface.
+# 2)You can think of it like a waiter in a restaurant.
+# 3)You (the customer) look at the menu and tell the waiter what you want.
+# 4)The waiter takes your order to the kitchen.
+# 5)The kitchen prepares your food and gives it to the waiter.
+# 6)The waiter brings it back to you.
+# 7)The API is like the waiter – it takes your request to a program or a server, gets the result, and gives it back to you.
+# 8)APIs are used to let different software talk to each other.
+
+# How to Use an API:-
+# 1)Find an API – For example, a Joke API, Weather API, Currency API, etc.
+# 2)Read the API documentation – It tells you:
+# i)What URLs to use
+# ii)What information to send (like city name)
+# iii)What it will give back
+# 3)Send a request using code
+# 4)Get a response (usually in JSON format)
+# 5)Use that data in your app or program
+
+import requests
+
+api_key = "5136d737d45d42b0b1764caa779e1a0a" #This is the API key provided by the dealer of the API. It is special for everyone
+url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey=5136d737d45d42b0b1764caa779e1a0a" #This is URL from which the API will be getting its resources
+response = requests.get(url) #We send a request to the API
+news_data = response.json() #Convert the response into Python format
+for article in news_data["articles"][:5]: #Printing the News
+    print("📰", article["title"])
+
+
+# Importance of '_':
+# _ is just a variable name, like any other, but by convention, it means: “I don’t care about this value.”
+
+line = "Moksh jain: What are you doing these days?"
+_, rest = line.split(']', 1) #Here the string is converted into 2 parts. The first value is assigned to '_' and the second to 'rest'
+
+# The value in the _: It shows other programmers: “Hey, this part is not important.”
+# It avoids naming variables you don’t need.
+# We can still access the '_' later in code but its not a good practise.
+
+# Even though _ works like a normal variable, Python developers use it as a "throwaway" variable, which means:
+# "I don't care about this value."
+# "I'm not going to use it later."
+# So using it later can confuse people reading your code. They’ll assume _ was meant to be ignored.
+
+# When it is used:-
+# Sometimes people do this in small scripts or quick testing:
+for _ in range(3): #Here, _ means: “I don’t care about the counter number.”
+    print("Do this 3 times")
