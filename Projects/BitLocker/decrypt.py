@@ -1,11 +1,11 @@
 #Modules used:
 import os
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet #Used to encrypt and decrypt data securely.
 
-#List of the Files contained in the directory
+# An empty list to store file names that will be encrypted.
 files = []
 
-# Getting the key to decrypt all the files
+# Generates a new Fernet key used for encrypting and decrypting data.# This key is crucial — losing it means the data can't be decrypted.
 with open("key.key", "rb") as fkey:
     key = fkey.read()
 
@@ -13,7 +13,7 @@ with open("key.key", "rb") as fkey:
 for file in os.listdir():
 
     # Skipping our malware,key and th decrypt file
-    if file == "malware.py" or file == "key.key" or file == "decrypt.py":
+    if file == "encrypt.py" or file == "key.key" or file == "decrypt.py":
         continue
 
     # Appending

